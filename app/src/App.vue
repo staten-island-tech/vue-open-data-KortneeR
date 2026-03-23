@@ -1,22 +1,23 @@
 <script setup>
 
-const URL = "https://data.cityofnewyork.us/resource/p937-wjvj.json";
+async function getData() {
+  const url = "https://data.cityofnewyork.us/resource/p937-wjvj.json";
 
-async function getData(URL) { 
   try {
-    const response = await fetch(URL);
-    if (response.status != 200) {
-      throw new Error(response);
-    } else {
-      const data = await response.json();
-      console.log(data);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
+
+    const result = await response.json();
+    console.log(result);
   } catch (error) {
-    console.log(error);
-    console.log("不好");
+    console.error(error.message);
   }
 }
-getData(URL);
+getData();
+
+
 
 </script>
 
