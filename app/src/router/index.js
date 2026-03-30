@@ -1,28 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '@/views/HomePage.vue'
-import RatOne from '@/views/RatOne.vue'
-import RatTwo from '@/views/RatTwo.vue/'
-
-
+import HomePage    from '@/views/HomePage.vue'
+import BoroughPage from '@/views/BoroughPage.vue'
+import TypesPage   from '@/views/TypesPage.vue'
+ 
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: HomePage,
+  },
+  {
+    path: '/borough',
+    name: 'Borough',
+    component: BoroughPage,
+  },
+  {
+    path: '/types',
+    name: 'Types',
+    component: TypesPage,
+  },
+]
+ 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomePage,
-    },
-    {
-      path: '/ratone',
-      name: 'ratone',
-      component:RatOne,
-    },
-    {
-      path: '/rattwo',
-      name: 'rattwo',
-      component:RatTwo,
-    },
-  ],
+  routes,
 })
-
+ 
 export default router
+ 
