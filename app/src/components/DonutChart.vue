@@ -160,4 +160,4 @@ onBeforeUnmount(() => {
   flex-shrink: 0;
   display: inline-block;
 }
-</style>
+</style
